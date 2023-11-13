@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://localhost:7228//api'; // Adjust the base URL as needed
+const API_BASE_URL = 'https://inventorymanagergoogle.azurewebsites.net/api'; // Adjust the base URL as needed
 
 // Fetch inventory items
 export const getInventoryItems = async () => {
