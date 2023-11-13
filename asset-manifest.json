@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/GoogleSheetsApi/static/css/main.f96f07a4.css",
+    "main.js": "/GoogleSheetsApi/static/js/main.fdb6952a.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/GoogleSheetsApi/static/js/787.9e9f4ffd.chunk.js",
+    "index.html": "/GoogleSheetsApi/index.html",
+    "main.f96f07a4.css.map": "/GoogleSheetsApi/static/css/main.f96f07a4.css.map",
+    "main.fdb6952a.js.map": "/GoogleSheetsApi/static/js/main.fdb6952a.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/GoogleSheetsApi/static/js/787.9e9f4ffd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f96f07a4.css",
+    "static/js/main.fdb6952a.js"
+  ]
+}
