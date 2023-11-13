@@ -23,6 +23,17 @@ builder.Services.AddScoped<GoogleSheetsService>(sp => {
 });
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyCorsPolicy", builder =>
+    {
+        builder.WithOrigins("http://localhost:3000", "https://cv145.github.io/GoogleSheetsApi/", "https://cv145.github.io") // Add your React app's domain here
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 // Register the Swagger generator
@@ -52,6 +63,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseCors("MyCorsPolicy"); // Apply CORS policy
 
 app.UseAuthorization();
 
