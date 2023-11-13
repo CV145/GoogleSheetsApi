@@ -25,7 +25,7 @@ function InventoryList() {
         <tbody>
           {items.map(item => (
             <tr key={item.id}>
-              <td>{item.name}</td>
+              <td>{item.itemName}</td>
               <td>{item.quantity}</td>
               <td>{item.price}</td>
             </tr>
