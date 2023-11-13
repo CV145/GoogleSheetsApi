@@ -11,9 +11,9 @@ function App() {
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" exact component={InventoryList} />
-        <Route path="/add-item" component={AddEditItem} />
-        <Route path="/edit-item/:id" component={AddEditItem} />
+        <Route path="/" exact element={<InventoryList/>} />
+        <Route path="/add-item" element={<AddEditItem/>} />
+        <Route path="/edit-item/:id" element={<AddEditItem/>} />
         {/* Add other routes as needed */}
       </Routes>
     </Router>
