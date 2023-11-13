@@ -39,18 +39,36 @@ namespace GoogleSheetsApi.Services
             {
                 foreach (var row in values)
                 {
-                    // Assumes the sheet format is: ItemName | Quantity | Price
-                    inventoryItems.Add(new InventoryItem
+                    var item = new InventoryItem();
+
+                    item.ItemName = row.Count > 0 && row[0] != null ? row[0].ToString() : "";
+
+                    if (row.Count > 1 && row[1] != null && int.TryParse(row[1].ToString(), out int quantity))
                     {
-                        ItemName = row.Count > 0 ? row[0].ToString() : "",
-                        Quantity = row.Count > 1 ? int.Parse(row[1].ToString()) : 0,
-                        Price = row.Count > 2 ? decimal.Parse(row[2].ToString()) : 0
-                    });
+                        item.Quantity = quantity;
+                    }
+                    else
+                    {
+                        item.Quantity = 0; // Default value if parsing fails or if null
+                    }
+
+                    if (row.Count > 2 && row[2] != null && decimal.TryParse(row[2].ToString(), out decimal price))
+                    {
+                        item.Price = price;
+                    }
+                    else
+                    {
+                        item.Price = 0.0m; // Default value if parsing fails or if null
+                    }
+
+                    inventoryItems.Add(item);
                 }
+
             }
 
             return inventoryItems;
         }
+
 
         public void AddInventoryItem(InventoryItem item)
         {
